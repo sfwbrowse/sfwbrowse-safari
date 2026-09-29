@@ -1,0 +1,68 @@
+{
+  "manifest_version": 3,
+  "name": "SFWbrowse - Safe Browsing & SafeSearch Enforcer",
+  "version": "1.0.0",
+  "description": "Lightweight, zero-telemetry safe browsing extension enforcing Cookies Mode, client storage locking, and declarative domain filtering.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "SFWbrowse Protection",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "permissions": [
+    "cookies",
+    "storage",
+    "declarativeNetRequest",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "*://*.redditp.com/*",
+    "*://*.duckduckgo.com/*",
+    "*://*.bing.com/*",
+    "*://*.qwant.com/*",
+    "*://*.ecosia.org/*",
+    "*://*.teddit.net/*",
+    "*://*.libreddit.kavin.rocks/*",
+    "*://*.yewtu.be/*",
+    "*://*.proxitok.pabloferrero.org/*",
+    "*://*.troddit.com/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "safesearch_rules",
+        "enabled": true,
+        "path": "rules/safesearch-rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://troddit.com/*",
+        "*://www.troddit.com/*"
+      ],
+      "js": ["src/content-troddit.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ]
+}

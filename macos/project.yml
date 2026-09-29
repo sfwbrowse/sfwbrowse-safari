@@ -1,0 +1,38 @@
+name: Sfwbrowse
+options:
+  bundleIdPrefix: at.faiz
+  deploymentTarget:
+    macOS: "13.0"
+targets:
+  Sfwbrowse:
+    type: application
+    platform: macOS
+    deploymentTarget: "13.0"
+    sources:
+      - path: App
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: at.faiz.sfwbrowse
+  SfwbrowseExtension:
+    type: app-extension
+    platform: macOS
+    deploymentTarget: "13.0"
+    sources:
+      - path: Extension
+      - path: ../src
+        name: Resources
+        buildPhase: resources
+      - path: ../popup
+        name: Resources
+        buildPhase: resources
+      - path: ../options
+        name: Resources
+        buildPhase: resources
+      - path: ../icons
+        name: Resources
+        buildPhase: resources
+      - path: ../manifest.json
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: at.faiz.sfwbrowse.Extension

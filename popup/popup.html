@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SFWbrowse</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="header">
+      <div class="brand">
+        <svg id="shield-icon" class="shield-svg active" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path id="shield-check" d="M9 12l2 2 4-4"/>
+        </svg>
+        <span class="brand-title">SFWbrowse</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="popup-master-toggle" checked>
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div class="status-card">
+      <div id="status-text" class="status-indicator">Protection Active</div>
+      <p id="status-desc" class="status-sub">Zero telemetry & strict SafeSearch enforced</p>
+    </div>
+
+    <div class="site-card">
+      <div class="site-info">
+        <span class="site-label">Current Site:</span>
+        <strong id="current-hostname" class="site-domain">Detecting...</strong>
+      </div>
+      <button id="btn-toggle-site" class="btn btn-outline" disabled>Allowlist Site</button>
+    </div>
+
+    <div class="footer">
+      <button id="btn-open-options" class="btn-link">
+        <svg class="icon-cog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+        Preferences & Blocklist
+      </button>
+    </div>
+  </div>
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

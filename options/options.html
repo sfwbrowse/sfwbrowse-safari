@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SFWbrowse Options & Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+        <div>
+          <h1>SFWbrowse</h1>
+          <p class="subtitle">Zero-telemetry safe browsing enforcement</p>
+        </div>
+      </div>
+      <div class="master-toggle-container">
+        <label class="switch">
+          <input type="checkbox" id="master-toggle" checked>
+          <span class="slider round"></span>
+        </label>
+        <span id="master-status" class="status-label">Enabled</span>
+      </div>
+    </header>
+
+    <main class="content">
+      <!-- Section 1: Core Protection Modules -->
+      <section class="card">
+        <h2>Protection Subsystems</h2>
+        <p class="section-desc">Enable or disable specific content-filtering modules.</p>
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-info">
+              <strong>Cookies Mode Engine</strong>
+              <p>Asserts and heals SafeSearch and adult-filter cookies on supported platforms.</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="feat-cookies" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-info">
+              <strong>Domain Blocklist (DNR)</strong>
+              <p>Hardware-accelerated network blocking of explicit adult and malicious domains.</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="feat-blocklist" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-info">
+              <strong>SafeSearch Rewriter</strong>
+              <p>Forces strict filtering query parameters on Google, Bing, and DuckDuckGo.</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="feat-safesearch" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-info">
+              <strong>Client Storage Guard (SPAs)</strong>
+              <p>Locks localStorage adult toggles on Single Page Applications like Troddit.</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="feat-storagelock" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Supported Cookie Rules -->
+      <section class="card">
+        <h2>Supported Services & Platforms</h2>
+        <p class="section-desc">Granular controls for specific target platforms and search engines.</p>
+        <div id="cookie-rules-list" class="rules-list">
+          <!-- Dynamically populated by options.js -->
+        </div>
+      </section>
+
+      <!-- Section 3: Custom Domain Blocklist -->
+      <section class="card">
+        <h2>Custom Domain Blocklist</h2>
+        <p class="section-desc">Add custom domains to block. Subresources and main frames will be restricted.</p>
+        
+        <div class="add-domain-bar">
+          <input type="text" id="input-domain" placeholder="e.g. badsite.com" autocomplete="off" spellcheck="false">
+          <button id="btn-add-domain" class="btn btn-primary">Add Domain</button>
+        </div>
+
+        <ul id="custom-domain-list" class="domain-list">
+          <!-- Dynamically populated -->
+        </ul>
+      </section>
+
+      <!-- Section 4: Maintenance -->
+      <section class="card danger-zone">
+        <div class="danger-info">
+          <h2>Reset to Factory Defaults</h2>
+          <p class="section-desc">Restore original protection settings, enable all modules, and clear custom lists.</p>
+        </div>
+        <button id="btn-reset" class="btn btn-danger">Reset Defaults</button>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+  </div>
+
+  <script src="options.js" type="module"></script>
+</body>
+</html>

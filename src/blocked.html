@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Restricted - SFWbrowse</title>
+  <link rel="stylesheet" href="blocked.css">
+</head>
+<body>
+  <div class="card">
+    <div class="shield-container">
+      <svg class="shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <line x1="12" y1="8" x2="12" y2="12"/>
+        <line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+    </div>
+    <h1>Navigation Restricted</h1>
+    <p class="description">
+      Access to <strong id="blocked-domain">this website</strong> has been blocked by SFWbrowse in accordance with your active safe browsing policies.
+    </p>
+    <div class="category-badge">Category: Adult Content / Explicit Material</div>
+
+    <div class="actions">
+      <button id="btn-back" class="btn btn-primary">Go Back to Safety</button>
+      <button id="btn-options" class="btn btn-secondary">Extension Settings</button>
+    </div>
+  </div>
+  <script src="blocked.js" type="module"></script>
+</body>
+</html>

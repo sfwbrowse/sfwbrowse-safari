@@ -1,0 +1,9 @@
+{
+  "name": "sfwbrowse-safari",
+  "version": "1.0.0",
+  "description": "Safari Web Extension distribution port for SFWbrowse",
+  "type": "module",
+  "scripts": {
+    "test": "node --test src/*.test.js"
+  }
+}

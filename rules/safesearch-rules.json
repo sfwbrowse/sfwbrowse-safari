@@ -1,0 +1,119 @@
+[
+  {
+    "id": 101,
+    "priority": 10,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "addOrReplaceParams": [
+              { "key": "safe", "value": "active" }
+            ]
+          }
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "||google.com/search?*q=*",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 102,
+    "priority": 10,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "addOrReplaceParams": [
+              { "key": "safe", "value": "active" }
+            ]
+          }
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "||google.*/search?*q=*",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 103,
+    "priority": 10,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "addOrReplaceParams": [
+              { "key": "adlt", "value": "strict" }
+            ]
+          }
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "||bing.com/search?*q=*",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 104,
+    "priority": 10,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "addOrReplaceParams": [
+              { "key": "kp", "value": "1" },
+              { "key": "p", "value": "1" }
+            ]
+          }
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "||duckduckgo.com/?*q=*",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 501,
+    "priority": 10,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "YouTube-Restrict",
+          "operation": "set",
+          "value": "Strict"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "||youtube.com/*",
+      "resourceTypes": ["main_frame", "sub_frame", "xmlhttprequest"]
+    }
+  },
+  {
+    "id": 502,
+    "priority": 10,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "YouTube-Restrict",
+          "operation": "set",
+          "value": "Strict"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "||youtube-nocookie.com/*",
+      "resourceTypes": ["main_frame", "sub_frame", "xmlhttprequest"]
+    }
+  }
+]
